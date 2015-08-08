@@ -28,6 +28,19 @@ L3GD20::~L3GD20() {
 	//delete _smf;
 }
 
+void L3GD20::setAddr(uint8_t addr)
+{
+	if(_addr != addr)
+	{
+		reset();
+	}
+	_addr = addr;
+}
+
+void L3GD20::setCoefficient(double r)
+{
+	_r = r;
+}
 
 
 void L3GD20::setScale(uint8_t scale)

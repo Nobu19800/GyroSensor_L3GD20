@@ -122,7 +122,7 @@ RTC::ReturnCode_t GyroSensor_L3GD20::onShutdown(RTC::UniqueId ec_id)
 
 RTC::ReturnCode_t GyroSensor_L3GD20::onActivated(RTC::UniqueId ec_id)
 {
-	mraa_result_t response;
+	
 	if(_i2c == NULL)
 	{
 		_smf->sem_lock();
@@ -132,10 +132,10 @@ RTC::ReturnCode_t GyroSensor_L3GD20::onActivated(RTC::UniqueId ec_id)
 	if(gyroSensor == NULL)
 	{
 		gyroSensor = new L3GD20(_i2c, _smf, m_addr);
-		if(response != MRAA_SUCCESS)
-		{
-			return RTC::RTC_ERROR;
-		}
+	}
+	else
+	{
+		gyroSensor->setAddr(m_addr);
 	}
 
 	

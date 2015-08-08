@@ -19,7 +19,8 @@ public:
 	void reset(void);
 	void getGyroData(double &avx, double &avy, double &avz);
 	void getGyro(double &avx, double &avy, double &avz);
-	
+	void setAddr(uint8_t addr = 0x6a);
+	void setCoefficient(double r = 0.2);
 
 	
 	
