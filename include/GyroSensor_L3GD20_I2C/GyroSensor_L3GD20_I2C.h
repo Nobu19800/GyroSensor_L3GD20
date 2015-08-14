@@ -1,7 +1,7 @@
 // -*- C++ -*-
 /*!
- * @file  GyroSensor_L3GD20.h
- * @brief GyroSensor_L3GD20
+ * @file  GyroSensor_L3GD20_I2C.h
+ * @brief GyroSensor_L3GD20_I2C
  * @date  $Date$
  *
  * LGPL
@@ -9,8 +9,8 @@
  * $Id$
  */
 
-#ifndef GYROSENSOR_L3GD20_H
-#define GYROSENSOR_L3GD20_H
+#ifndef GyroSensor_L3GD20_I2C_H
+#define GyroSensor_L3GD20_I2C_H
 
 #include <rtm/idl/BasicDataTypeSkel.h>
 #include <rtm/idl/ExtendedDataTypesSkel.h>
@@ -38,17 +38,17 @@ using namespace RTC;
 #include <rtm/DataInPort.h>
 #include <rtm/DataOutPort.h>
 
-#include "L3GD20.h"
+#include "L3GD20_I2C.h"
 
 /*!
- * @class GyroSensor_L3GD20
- * @brief GyroSensor_L3GD20
+ * @class GyroSensor_L3GD20_I2C
+ * @brief GyroSensor_L3GD20_I2C
  *
  * ジャイロセンサL3GD20で角速度を検出してDataOutPortから出力するRT
  * Cです。
  *
  */
-class GyroSensor_L3GD20
+class GyroSensor_L3GD20_I2C
   : public RTC::DataFlowComponentBase
 {
  public:
@@ -56,12 +56,12 @@ class GyroSensor_L3GD20
    * @brief constructor
    * @param manager Maneger Object
    */
-  GyroSensor_L3GD20(RTC::Manager* manager);
+  GyroSensor_L3GD20_I2C(RTC::Manager* manager);
 
   /*!
    * @brief destructor
    */
-  ~GyroSensor_L3GD20();
+  ~GyroSensor_L3GD20_I2C();
 
   // <rtc-template block="public_attribute">
   
@@ -247,7 +247,8 @@ class GyroSensor_L3GD20
    * - Name:  addr
    * - DefaultValue: 106
    */
-  int m_addr;
+  std::string m_addr;
+  std::string m_scale;
 
   // </rtc-template>
 
@@ -284,7 +285,7 @@ class GyroSensor_L3GD20
   // </rtc-template>
 
  private:
-	L3GD20 *gyroSensor;
+	L3GD20_I2C *gyroSensor;
 	mraa::I2c* _i2c;
 	i2c_smf *_smf;
   // <rtc-template block="private_attribute">
@@ -300,7 +301,7 @@ class GyroSensor_L3GD20
 
 extern "C"
 {
-  DLL_EXPORT void GyroSensor_L3GD20Init(RTC::Manager* manager);
+  DLL_EXPORT void GyroSensor_L3GD20_I2CInit(RTC::Manager* manager);
 };
 
-#endif // GYROSENSOR_L3GD20_H
+#endif // GyroSensor_L3GD20_I2C_H

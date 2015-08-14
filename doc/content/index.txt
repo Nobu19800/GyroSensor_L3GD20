@@ -1,4 +1,4 @@
-GyroSensor_L3GD20Name - English
+GyroSensor_L3GD20_I2CName - English
 ========================
 
 .. toctree::
@@ -19,7 +19,7 @@ For a full list of classes and functions, see the `API documentation`_.
 Requirements
 ============
 
-GyroSensor_L3GD20 uses the `CMake build system`. You will need at least version
+GyroSensor_L3GD20_I2C uses the `CMake build system`. You will need at least version
 2.8 to be able to build the component.
 
 .. _`CMAke build system`:
@@ -43,24 +43,24 @@ recommended method of installation in Windows.
   to take effect before using the component.
 
 The component can be launched by double-clicking the
-``GyroSensor_L3GD20Comp`` executable. The ``GyroSensor_L3GD20`` library
+``GyroSensor_L3GD20_I2CComp`` executable. The ``GyroSensor_L3GD20_I2C`` library
 is available for loading into a manager, using the initialisation function
-``GyroSensor_L3GD20Init``.
+``GyroSensor_L3GD20_I2CInit``.
 
 From source
 -----------
 
-Follow these steps to install GyroSensor_L3GD20 from source in any operating
+Follow these steps to install GyroSensor_L3GD20_I2C from source in any operating
 system:
 
 - Download the source, either from the repository or a source archive,
   and extract it somewhere::
 
-    tar -xvzf GyroSensor_L3GD20-1.0.0.tar.gz
+    tar -xvzf GyroSensor_L3GD20_I2C-1.0.0.tar.gz
 
 - Change to the directory containing the extracted source::
 
-    cd GyroSensor_L3GD20-1.0.0
+    cd GyroSensor_L3GD20_I2C-1.0.0
 
 - Create a directory called ``build``::
 
@@ -91,10 +91,10 @@ system:
 The component is now ready for use. See the next section for instructions on
 configuring the component.
 
-GyroSensor_L3GD20 can be launched in stand-alone mode by executing the
-``GyroSensor_L3GD20Comp`` executable (installed into ``${prefix}/components/bin``).
-Alternatively, ``libGyroSensor_L3GD20.so`` can be loaded into a manager, using the
-initialisation function ``GyroSensor_L3GD20Init``. This shared object can be found in
+GyroSensor_L3GD20_I2C can be launched in stand-alone mode by executing the
+``GyroSensor_L3GD20_I2CComp`` executable (installed into ``${prefix}/components/bin``).
+Alternatively, ``libGyroSensor_L3GD20_I2C.so`` can be loaded into a manager, using the
+initialisation function ``GyroSensor_L3GD20_I2CInit``. This shared object can be found in
 ``${prefix}/components/lib`` or ``${prefix}/components/lib64``.
 
 
@@ -107,7 +107,8 @@ The available configuration parameters are described below:
 Parameter        Data type          Default Value    Effect
 ================ ================== ================ ======
 I2C_channel      int                1                I2Cのポート番号
-addr             int                106              L3GD20のI2Cスレーブアドレス
+addr             string             0x6A             L3GD20のI2Cスレーブアドレス
+scale            string             250dps           測定範囲
 ================ ================== ================ ======
 
 Ports
@@ -125,7 +126,7 @@ Examples
 ========
 
 An example configuration file is provided in the
-``${prefix}/components/share/GyroSensor_L3GD20/examples/conf/`` directory.
+``${prefix}/components/share/GyroSensor_L3GD20_I2C/examples/conf/`` directory.
 
 Changelog
 =========

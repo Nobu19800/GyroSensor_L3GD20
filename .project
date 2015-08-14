@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>GyroSensor_L3GD20</name>
+	<name>GyroSensor_L3GD20_I2C</name>
 	<comment></comment>
 	<projects>
 	</projects>

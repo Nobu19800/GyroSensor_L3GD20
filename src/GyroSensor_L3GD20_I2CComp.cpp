@@ -1,6 +1,6 @@
 // -*- C++ -*-
 /*!
- * @file GyroSensor_L3GD20Comp.cpp
+ * @file GyroSensor_L3GD20_I2CComp.cpp
  * @brief Standalone component
  * @date $Date$
  *
@@ -13,16 +13,16 @@
 #include <iostream>
 #include <string>
 #include <stdlib.h>
-#include "GyroSensor_L3GD20.h"
+#include "GyroSensor_L3GD20_I2C.h"
 
 
 void MyModuleInit(RTC::Manager* manager)
 {
-  GyroSensor_L3GD20Init(manager);
+  GyroSensor_L3GD20_I2CInit(manager);
   RTC::RtcBase* comp;
 
   // Create a component
-  comp = manager->createComponent("GyroSensor_L3GD20");
+  comp = manager->createComponent("GyroSensor_L3GD20_I2C");
 
   if (comp==NULL)
   {

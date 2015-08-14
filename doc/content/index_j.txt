@@ -1,4 +1,4 @@
-GyroSensor_L3GD20 - 日本語
+GyroSensor_L3GD20_I2C - 日本語
 =======================
 
 
@@ -13,9 +13,9 @@ GyroSensor_L3GD20 - 日本語
 条件
 ====
 
-GyroSensor_L3GD20はOpenRTM-aist 1.0.0以上のC++版が必要です。
+GyroSensor_L3GD20_I2CはOpenRTM-aist 1.0.0以上のC++版が必要です。
 
-GyroSensor_L3GD20は CMake_ を使います。CMake 2.8以上が必要です。
+GyroSensor_L3GD20_I2Cは CMake_ を使います。CMake 2.8以上が必要です。
 
 .. _CMAke:
    http://www.cmake.org
@@ -36,8 +36,8 @@ Windowsのユーザはインストーラパッケージを使用してコンポ�
 - 環境変数の変更を適用するため、コンポーネントを使用する前にコンピューターを
   再起動する必要があるかもしれません。
 
-GyroSensor_L3GD20は ``GyroSensor_L3GD20Comp`` の実行をダブルクリックして実行することが
-できます。あるいは、 ``GyroSensor_L3GD20`` を初期化関数の ``GyroSensor_L3GD20Init`` を利用して、
+GyroSensor_L3GD20_I2Cは ``GyroSensor_L3GD20_I2CComp`` の実行をダブルクリックして実行することが
+できます。あるいは、 ``GyroSensor_L3GD20_I2C`` を初期化関数の ``GyroSensor_L3GD20_I2CInit`` を利用して、
 マネージャにロードすることができます。
 
 ソースから
@@ -47,11 +47,11 @@ GyroSensor_L3GD20は ``GyroSensor_L3GD20Comp`` の実行をダブルクリック
 
 - ソースをダウンロードして解凍してください::
 
-    tar -xvzf GyroSensor_L3GD20-1.0.0.tar.gz
+    tar -xvzf GyroSensor_L3GD20_I2C-1.0.0.tar.gz
 
 - 解凍されたフォルダに入ってください::
 
-    cd GyroSensor_L3GD20-1.0.0
+    cd GyroSensor_L3GD20_I2C-1.0.0
 
 - ``build`` フォルダを作ってください::
 
@@ -82,9 +82,9 @@ GyroSensor_L3GD20は ``GyroSensor_L3GD20Comp`` の実行をダブルクリック
 ここまでで、コンポーネントが使えるようになりました。コンフィグレーションは次のセクションを
 参照してください。
 
-GyroSensor_L3GD20は ``GyroSensor_L3GD20Comp`` を実行（ ``${prefix}/components/bin`` に
+GyroSensor_L3GD20_I2Cは ``GyroSensor_L3GD20_I2CComp`` を実行（ ``${prefix}/components/bin`` に
 インストールされます）することでスタンドアローンモードで実行することができます。
-あるいは、 ``libGyroSensor_L3GD20.so`` を初期化関数の ``GyroSensor_L3GD20Init`` を利用して、
+あるいは、 ``libGyroSensor_L3GD20_I2C.so`` を初期化関数の ``GyroSensor_L3GD20_I2CInit`` を利用して、
 マネージャにロードすることができます。このライブラリは ``${prefix}/components/lib`` 
 または ``${prefix}/components/lib64`` にインストールされます。
 
@@ -99,7 +99,8 @@ GyroSensor_L3GD20は ``GyroSensor_L3GD20Comp`` を実行（ ``${prefix}/componen
 パラメータ       データ型           デフォルト値     意味
 ================ ================== ================ ====
 I2C_channel      int                1                I2Cのポート番号
-addr             int                106              L3GD20のI2Cスレーブアドレス
+addr             string             0x6A             L3GD20のI2Cスレーブアドレス
+scale            string             250dps           測定範囲
 ================ ================== ================ ====
 
 ポート
@@ -116,7 +117,7 @@ gyro            OutPort     RTC::TimedAngularVelocity3D    ジャイロセンサ
 例
 ==
 
-例のrtc.confファイルは ``${prefix}/components/share/GyroSensor_L3GD20/examples/conf/``
+例のrtc.confファイルは ``${prefix}/components/share/GyroSensor_L3GD20_I2C/examples/conf/``
 フォルダにインストールされています。
 
 Changelog

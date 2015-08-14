@@ -1,4 +1,4 @@
-set(hdrs GyroSensor_L3GD20.h
+set(hdrs GyroSensor_L3GD20_I2C.h
     PARENT_SCOPE
     )
 

@@ -1,5 +1,5 @@
-set(comp_srcs GyroSensor_L3GD20.cpp L3GD20.cpp i2c_smf.cpp )
-set(standalone_srcs GyroSensor_L3GD20Comp.cpp)
+set(comp_srcs GyroSensor_L3GD20_I2C.cpp i2c_smf.cpp L3GD20.cpp L3GD20_I2C.cpp)
+set(standalone_srcs GyroSensor_L3GD20_I2CComp.cpp)
 
 if (DEFINED OPENRTM_INCLUDE_DIRS)
   string(REGEX REPLACE "-I" ";"
