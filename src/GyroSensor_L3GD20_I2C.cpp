@@ -190,6 +190,7 @@ RTC::ReturnCode_t GyroSensor_L3GD20_I2C::onExecute(RTC::UniqueId ec_id)
 		m_gyro.data.avx = avx;
 		m_gyro.data.avy = avy;
 		m_gyro.data.avz = avz;
+		setTimestamp(m_gyro);
 		
 		m_gyroOut.write();
 	}
